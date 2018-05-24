@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- spring creates an object of Message class using the default constructor -->
+	<bean id="msg" class="spring.training.entity.Message">
+		<!-- spring invokes the setText("Hello SLK!");  -->
+		<!-- this is a.k.a setter or property injection -->
+		<property name="text" value="Hello SLK!" />
+		<property name="from" value="Vinod" />
+	</bean>
+
+	<bean class="spring.training.service.Greeting">
+		<!-- manual wiring using setter injection -->
+		<!-- <property name="message" ref="" /> -->
+		
+		<!-- manual wiring using constructor injection -->
+		<constructor-arg ref="msg" />
+	</bean>
+</beans>

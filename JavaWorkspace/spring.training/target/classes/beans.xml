@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- By default beans are eagerly instantiated and are singletons -->
+	<!-- By adding an attribute lazy-init="true", the singleton bean can be lazily instantiated -->
+	<!-- By adding an attribute scope="prototype", the bean is lazily instnatiated 
+		and instantiated for every getBean() function calls -->
+		
+	<bean id="khs" scope="prototype" class="spring.training.service.impl.KannadaHelloService">
+	</bean>
+
+	<bean name="ehs" scope="prototype" class="spring.training.service.impl.EnglishHelloService">
+	</bean>
+
+	<bean name="shs" scope="prototype" class="spring.training.service.impl.SpanishHelloService">
+	</bean>
+
+</beans>
